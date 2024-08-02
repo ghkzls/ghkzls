@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .poll-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        button {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function submitPoll(answer) {
+            localStorage.setItem('pollAnswer', answer);
+            window.location.href = 'result.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Pick your favorite photo</h1>
+        <div class="poll-options">
+            <img src="photo1.jpg" alt="Photo 1" onclick="submitPoll('Photo 1')">
+            <img src="photo2.jpg" alt="Photo 2" onclick="submitPoll('Photo 2')">
+            <img src="photo3.jpg" alt="Photo 3" onclick="submitPoll('Photo 3')">
+        </div>
+    </div>
+</body>
+</html>

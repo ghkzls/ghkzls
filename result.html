@@ -1,0 +1,36 @@
+result.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const answer = localStorage.getItem('pollAnswer');
+            document.getElementById('result').innerText = answer ? `You chose: ${answer}` : 'No answer selected';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Poll Result</h1>
+        <p id="result"></p>
+        <a href="index.html">Back to Home</a>
+    </div>
+</body>
+</html>
